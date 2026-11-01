@@ -1,0 +1,103 @@
+在microcai的帮助下，太极码的IBUS项目框架建起来了。
+
+以后可以用
+
+./configure && make && make install
+
+
+就可以拥有输入法了
+
+项目地址：http://github.com/microcai/ibus-table-taiji
+
+
+相关：
+
+五笔的码表格式：http://github.com/acevery/ibus-table-wubi/raw/master/tables/wubi86.txt
+
+http://github.com/acevery/ibus-table/blob/master/tables/template.txt
+
+此文件必须是UTF-8编码，以下是文件内容
+
+### Wubi86 table
+ ### This file must be encoded into UTF-8.
+ ### 
+ ### Changelog
+ ### Yu Yuwei <acevery@gmail.com>
+ ###     - Use original level 1 and 2 JianMa.
+ ### Yu Yuwei <acevery@gmail.com>
+ ###     - Update to Jidian 6, provided by Chen Xing
+ ### Yu Yuwei <acevery@gmail.com>
+ ###     - Add freqs from google.
+ ###     - Fix punctuation freqs
+ ### Chen Xing <cxcxcxcx@gmail.com>
+ ###     - Convert from JidianWubi table
+ ###
+
+### Begin Table definition.
+ BEGIN_DEFINITION
+ ### Original table author
+ AUTHOR = Wozy <wozy.in@gmail.com>
+
+### An unique id to distinguish this table among others.
+ ### Use uuidgen to generate this kind of id.
+ UUID = 3a799bf4-b978-4282-826f-2339ea468c27
+
+### A unique number indicates the version of this file.
+ ### For example the last modified date of this file.
+ ### This number must be less than 2^32.
+ SERIAL_NUMBER = 20081205
+
+ICON = wubi86.svg
+
+### The default name of this table
+ NAME = WuBi86
+
+### The local names of this table 
+ NAME.zh_CN = 五笔86
+ NAME.zh_TW = 五筆86
+ NAME.zh_HK = 五筆86
+
+### Supported languages of this table
+ LANGUAGES = zh_CN,zh_SG,zh_TW,zh_HK
+
+### Prompt string to be displayed in the status area.
+ STATUS_PROMPT = CN
+
+### Use full width punctuation by default
+ DEF_FULL_WIDTH_PUNCT = TRUE
+
+### Use full width letter by default
+ DEF_FULL_WIDTH_LETTER = FALSE
+
+### The maxmium length of a key.
+ MAX_KEY_LENGTH = 4
+
+### Valid input chars.
+ VALID_INPUT_CHARS = abcdefghijklmnopqrstuvwxyz
+
+### Whether user are allow to define their own phrase, default is true
+ USER_CAN_DEFINE_PHRASE = TRUE
+
+### Whether support PinYin Mode, default is true
+ PINYIN_MODE = TRUE
+
+### If true then the phrases' frequencies will be adjusted dynamically.
+ DYNAMIC_ADJUST = TRUE
+
+### Rules for user define phrase construct:
+ RULES = ce2:p11+p12+p21+p22;ce3:p11+p21+p31+p32;ca4:p11+p21+p31+p-11
+
+END_DEFINITION
+
+
+ ### Begin Table data.
+ BEGIN_TABLE
+ a 工 99454797
+ b 了 1477224452
+ c 以 418261033
+ d 在 1133790406
+ ....
+ adlt 巧克力 19000000
+ adlt 苦力 3600000
+ ....
+"
